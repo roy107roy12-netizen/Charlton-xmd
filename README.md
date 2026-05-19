@@ -203,7 +203,7 @@ Made with ❤️ by roy107roy12-netizen
 ## SESSION
 
 <a href="https://charlton.herokuapp.com/pair">
-<img src="https://img.shields.io/badge/PAIR%20SESSION-blue?style=for-the-badge&logo=whatsapp">
+<img src="https://img.shields.io/badge/PAIR%20SESSION-blueor-the-badge&logo=whatsapp">
 </a>
 
 -# CHARLTON WHATSAPP BOT
@@ -211,37 +211,3 @@ Made with ❤️ by roy107roy12-netizen
 ## Deploy To Heroku
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/roy107roy12-netizen/Whatsapp-bot)
-
----
-
-## Fork Repo
-
-<a href="https://github.com/roy107roy12-netizen/Whatsapp-bot/fork">
-<img src="https://img.shields.io/badge/Fork%20Repo-black?style=for-the-badge&logo=github">
-</a>
-
----
-
-## SESSION
-
-<a href="https://charlton.herokuapp.com/pair">
-<img src="https://img.shields.io/badge/PAIR%20SESSION-blue?style=for-the-badge&logo=whatsapp">
-</a>
-
----
-
-## HOW TO GET SESSION
-
-1. Open the pairing site below:
-
-```txt
-https://charlton.herokuapp.com/pair?number=2547XXXXXXXX 
-## 🚀 Deployment & Setup
-
-| FORK | SESSION |
-| :---: | :---: |
-| Fork the repository to customize and use the bot for your needs.<br><br>[![Fork](https://img.shields.io/badge/FORK-this%20repo-purple?style=for-the-badge)](https://github.com/roy107roy12-netizen/Whatsapp-bot/fork) | Link your session ID to start using the bot. Follow steps if issues arise.<br><br>[![Pair session code](https://img.shields.io/badge/Pair%20session%20code-blue?style=for-the-badge&logo=whatsapp)](https://charlton.herokuapp.com/pair) |
-
-| download zip | DEPLOY |
-| :---: | :---: |
-| Download latest bot zip file.<br><br>[![Download ZIP](https://img.shields.io/badge/Download-ZIP-blue?style=for-the-badge)](https://github.com/roy107roy12-netizen/Whatsapp-bot/archive/refs/heads/main.zip) | Deploy the bot to your server or platform of choice using the button below.<br><br>[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://www.heroku.com/deploy?template=https://github.com/roy107roy12-netizen/Whatsapp-bot) |
