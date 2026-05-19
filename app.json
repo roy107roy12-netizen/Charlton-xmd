@@ -1,0 +1,12 @@
+{
+  "name": "CHARLTON WHATSAPP BOT",
+  "description": "WhatsApp Multi Device Bot",
+  "repository": "https://github.com/roy107roy12-netizen/Whatsapp-bot",
+  "keywords": ["whatsapp", "bot", "baileys"],
+  "env": {
+    "SESSION_ID": {
+      "description": "Put your session id",
+      "required": true
+    }
+  }
+}
