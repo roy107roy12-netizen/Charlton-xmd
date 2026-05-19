@@ -177,37 +177,3 @@ Use cloud storage (S3, Firebase, etc.) to persist authentication files. See HERO
 ## License
 
 MIT License - feel free to use this project for your own purposes
-
-## Support
-
-For issues and questions, please open an issue on GitHub.
-
----
-
-Made with ❤️ by roy107roy12-netizen
-
-**Deployment Status**: ✅ Ready for Heroku
-# CHARLTON WHATSAPP BOT
-
-## Deploy To Heroku
-
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/roy107roy12-netizen/Whatsapp-bot)
-
----
-
-## Fork Repo
-
-<a href="https://github.com/roy107roy12-netizen/Whatsapp-bot/fork">
-<img src="https://img.shields.io/badge/Fork%20Repo-black?style=for-the-badge&logo=github">
-</a>
-## SESSION
-
-<a href="https://charlton.herokuapp.com/pair">
-<img src="https://img.shields.io/badge/PAIR%20SESSION-blueor-the-badge&logo=whatsapp">
-</a>
-
--# CHARLTON WHATSAPP BOT
-
-## Deploy To Heroku
-
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/roy107roy12-netizen/Whatsapp-bot)
