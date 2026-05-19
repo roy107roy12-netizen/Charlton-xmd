@@ -17,7 +17,7 @@ async function connectToWhatsApp() {
   
   sock = makeWASocket({
     auth: state,
-    printQRInTerminal: true,
+    printQRInTerminal: false,
     logger: pino({ level: 'silent' }),
     browser: ['WhatsApp Bot', 'Chrome', '10.15.3']
   });
