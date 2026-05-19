@@ -51,7 +51,7 @@ Generate your WhatsApp Session ID.
 
 <br><br>
 
-<a href="https://pair.cypherxbot.space">
+<a href="https://charlton-pairsite.onrender.com">
 <img src="https://img.shields.io/badge/PAIRING%20CODE-SESSION-success?style=for-the-badge" width="260">
 </a>
 
@@ -100,6 +100,8 @@ Deploy CHARLTON-MD easily.
 - Easy Heroku Deployment
 - Baileys Based
 - Simple Plugin System
+- Custom Pair Site
+- QR + Pair Code Support
 
 ---
 
@@ -111,7 +113,7 @@ Click the fork button above.
 ### 2️⃣ Generate Session ID
 Use the pairing site below:
 
-<a href="https://pair.cypherxbot.space">
+<a href="https://charlton-pairsite.onrender.com">
 <img src="https://img.shields.io/badge/GENERATE-SESSION-green?style=for-the-badge">
 </a>
 
