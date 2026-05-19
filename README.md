@@ -93,8 +93,3 @@ import fs from "fs"
 
 function generateSession() {
   const data = fs.readFileSync("./session/creds.json")
-<a href="https://YOUR-PERMANENT-LINK.replit.app">
-  <img src="https://img.shields.io/badge/PAIR%20SESSION-CODE-white" width="260">
-</a><a href="https://4411174c-704f-4451-b119-c2aa844adb81-00-hdhwzdncfycx.spock.replit.dev">
-  <img src="https://img.shields.io/badge/PAIR%20SESSION-CODE-white" width="260">
-</a>
