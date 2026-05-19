@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced WhatsApp Bot Session Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Advanced WhatsApp Bot</h1>
+            <h2>Session Management</h2>
+        </header>
+
+        <div class="scanner-title">
+            <span class="dot green-dot"></span>
+            <h3>SCANNER</h3>
+            <span class="dot green-dot"></span>
+        </div>
+
+        <div class="cards-container">
+            <div class="card" onclick="selectOption('pairing')">
+                <span class="status-indicator"></span>
+                <div class="icon-wrapper">
+                    <div class="phone-icon">
+                        <div class="screen-dots"></div>
+                    </div>
+                </div>
+                <h2>PAIRING CODE</h2>
+                <p>Connect with 8-digit code</p>
+            </div>
+
+            <div class="card" onclick="selectOption('qr')">
+                <span class="status-indicator"></span>
+                <div class="icon-wrapper">
+                    <div class="qr-icon-wrapper">
+                        <span class="arrow">➔</span>
+                        <div class="phone-icon compact"></div>
+                    </div>
+                </div>
+                <h2>QR CODE</h2>
+                <p>Scan QR with your device</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function selectOption(type) {
+            if(type === 'pairing') {
+                alert('Pairing code option selected! Connecting to backend...');
+                // Your backend logic for pairing code goes here
+            } else {
+                alert('QR code option selected! Loading QR stream...');
+                // Your backend logic for QR code goes here
+            }
+        }
+    </script>
+</body>
+</html>
