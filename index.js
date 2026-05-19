@@ -67,3 +67,31 @@ connectToWhatsApp().catch(err => {
   log.error(err);
   process.exit(1);
 });
+const express = require("express")
+const app = express()
+
+app.get("/", (req, res) => {
+  res.send("CHARLTON BOT RUNNING")
+})
+
+app.get("/pair", async (req, res) => {
+  const number = req.query.number
+
+  if (!number) {
+    return res.send("Example: /pair?number=2547XXXXXXXX")
+  }
+
+  try {
+    const code = await sock.requestPairingCode(number)
+    res.send(`
+      <h2>Your Pairing Code</h2>
+      <h1>${code}</h1>
+    `)
+  } catch (err) {
+    res.send("Failed to generate pairing code")
+  }
+})
+
+app.listen(process.env.PORT || 3000, () => {
+  console.log("Pair server running")
+})
