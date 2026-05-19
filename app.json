@@ -39,7 +39,7 @@
     },
     "STATUS_LIKE_EMOJIS": {
       "description": "Emojis for auto status like (comma separated)",
-      "value": "💚,🫟",
+      "value": "💚,🩵",
       "required": false
     },
     "PREFIX": {
@@ -54,7 +54,7 @@
     },
     "BOT_PIC": {
       "description": "Bot profile picture URL",
-      "value": "https://i.ibb.co/PsZnb9NH/0d81ac6b1fb1.jpg",
+      "value": "https://i.ibb.co/twqdcc2y/ba0d6b394b57.jpg",
       "required": false
     },
     "BOTNAME": {
@@ -69,7 +69,7 @@
     },
     "OWNER_NAME": {
       "description": "Owner name",
-      "value": "Keith",
+      "value": "charlton",
       "required": false
     },
     "MODE": {
