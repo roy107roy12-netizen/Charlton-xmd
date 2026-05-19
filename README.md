@@ -206,27 +206,33 @@ Made with ❤️ by roy107roy12-netizen
 <img src="https://img.shields.io/badge/PAIR%20SESSION-blue?style=for-the-badge&logo=whatsapp">
 </a>
 
+-# CHARLTON WHATSAPP BOT
+
+## Deploy To Heroku
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/roy107roy12-netizen/Whatsapp-bot)
+
+---
+
+## Fork Repo
+
+<a href="https://github.com/roy107roy12-netizen/Whatsapp-bot/fork">
+<img src="https://img.shields.io/badge/Fork%20Repo-black?style=for-the-badge&logo=github">
+</a>
+
+---
+
+## SESSION
+
+<a href="https://charlton.herokuapp.com/pair">
+<img src="https://img.shields.io/badge/PAIR%20SESSION-blue?style=for-the-badge&logo=whatsapp">
+</a>
+
 ---
 
 ## HOW TO GET SESSION
 
 1. Open the pairing site below:
 
-https://charlton.herokuapp.com/pair?number=2547XXXXXXXX
-
-2. Enter your WhatsApp number with country code
-
-Example:
-
-254712345678
-
-3. Copy the pairing code shown
-
-4. Open WhatsApp
-
-5. Go to:
-Linked Devices > Link with phone number
-
-6. Enter the pairing code
-
-7. Bot will connect automatically
+```txt
+https://charlton.herokuapp.com/pair?number=2547XXXXXXXX 
