@@ -187,3 +187,16 @@ For issues and questions, please open an issue on GitHub.
 Made with ❤️ by roy107roy12-netizen
 
 **Deployment Status**: ✅ Ready for Heroku
+# CHARLTON WHATSAPP BOT
+
+## Deploy To Heroku
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/roy107roy12-netizen/Whatsapp-bot)
+
+---
+
+## Fork Repo
+
+<a href="https://github.com/roy107roy12-netizen/Whatsapp-bot/fork">
+<img src="https://img.shields.io/badge/Fork%20Repo-black?style=for-the-badge&logo=github">
+</a>
