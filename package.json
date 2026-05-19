@@ -1,17 +1,22 @@
 {
   "name": "whatsapp-bot-baileys",
   "version": "1.0.0",
-  "description": "WhatsApp bot using Baileys with command handler and auto-reply features",
+  "description": "WhatsApp bot using Baileys with command handler and auto-reply features. Heroku ready!",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js"
   },
+  "engines": {
+    "node": "18.x",
+    "npm": "9.x"
+  },
   "keywords": [
     "whatsapp",
     "baileys",
     "bot",
-    "command-handler"
+    "command-handler",
+    "heroku"
   ],
   "author": "roy107roy12-netizen",
   "license": "MIT",
