@@ -6,7 +6,7 @@ A simple WhatsApp Multi Device bot using the latest Baileys API.
 
 <div style="text-align: center;">
   <a href="https://github.com/roy107roy12-netizen/Whatsapp-bot">
-    <img src="https://i.ibb.co/PsZnb9NH/0d81ac6b1fb1.jpg" alt="CHARLTON-MD" border="0" />
+    <img src="https://i.ibb.co/twqdcc2y/ba0d6b394b57.jpg" alt="CHARLTON-MD" border="0" />
   </a>
 
   <hr style="margin-top: 20px; margin-bottom: 20px;"/>
@@ -93,73 +93,3 @@ import fs from "fs"
 
 function generateSession() {
   const data = fs.readFileSync("./session/creds.json")
-  const compressed = zlib.gzipSync(data).toString("base64")
-  return "KEITH;;;" + compressed
-}
-
-console.log(generateSession())
-```
-
----
-
-# 📦 INSTALLATION
-
-```bash
-git clone https://github.com/roy107roy12-netizen/Whatsapp-bot
-
-cd Whatsapp-bot
-
-npm install
-```
-
----
-
-# ▶️ START BOT
-
-```bash
-npm start
-```
-
----
-
-# ☁️ DEPLOYMENT PLATFORMS
-
-### HEROKU
-https://www.heroku.com
-
-### RAILWAY
-https://railway.app
-
-### RENDER
-https://render.com
-
----
-
-# 📂 PROJECT STRUCTURE
-
-```bash
-.
-├── session/
-│   └── creds.json
-├── index.js
-├── package.json
-└── README.md
-```
-
----
-
-# 👑 OWNER
-
-### CHARLTON MD
-
-GitHub:
-https://github.com/roy107roy12-netizen
-
----
-
-<p align="center">
-<i>
-I created this bot to make WhatsApp automation simple and enjoyable.
-Maintaining and improving the project is what keeps me motivated every day.
-</i>
-</p>
