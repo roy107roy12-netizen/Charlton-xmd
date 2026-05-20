@@ -51,7 +51,7 @@ Generate your WhatsApp Session ID.
 
 <br><br>
 
-<a href="https://charlton-pairsite.com">
+<a href="https://precious-tapioca-450158.netlify.app">
 <img src="https://img.shields.io/badge/PAIRING%20CODE-SESSION-success?style=for-the-badge" width="260">
 </a>
 
@@ -86,6 +86,21 @@ Deploy CHARLTON-MD easily.
 </td>
 </tr>
 
+<tr>
+<td align="center" colspan="2">
+
+<b>🚀 DEPLOY NETLIFY</b><br>
+One-click deploy to Netlify.
+
+<br><br>
+
+<a href="https://app.netlify.com/start/deploy?repository=https://github.com/roy107roy12-netizen/Whatsapp-bot">
+<img src="https://www.netlify.com/img/deploy/button.svg" width="220">
+</a>
+
+</td>
+</tr>
+
 </table>
 
 ---
@@ -98,6 +113,7 @@ Deploy CHARLTON-MD easily.
 - Auto Reconnect
 - Multi Device Support
 - Easy Heroku Deployment
+- One-Click Netlify Deployment
 - Baileys Based
 - Simple Plugin System
 - Custom Pair Site
