@@ -51,7 +51,7 @@ Generate your WhatsApp Session ID.
 
 <br><br>
 
-<a href="https://charlton-pairsite.onrender.com">
+<a href="https://charlton-pairsite.com">
 <img src="https://img.shields.io/badge/PAIRING%20CODE-SESSION-success?style=for-the-badge" width="260">
 </a>
 
