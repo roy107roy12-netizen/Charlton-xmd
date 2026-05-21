@@ -1,128 +1,223 @@
-const { default: makeWASocket, useMultiFileAuthState, DisconnectReason } = require('@whiskeysockets/baileys');
+const http = require('http');
+const fs = require('fs');
+const path = require('path');
+const QRCode = require('qrcode');
 const pino = require('pino');
-const express = require('express');
-require('dotenv').config();
 
-const { commandHandler } = require('./src/handlers/commandHandler');
-const { autoReplyHandler } = require('./src/handlers/autoReplyHandler');
-
-const app = express();
-const log = pino({ transport: { target: 'pino-pretty' } });
-
-let sock;
-
-// =========================
-// EXPRESS SERVER
-// =========================
-
-app.get("/", (req, res) => {
-  res.send("CHARLTON BOT RUNNING ✅");
-});
-
-app.get("/pair", async (req, res) => {
-  const number = req.query.number;
-
-  if (!sock) {
-    return res.send("Bot not connected yet. Please wait...");
-  }
-
-  if (!number) {
-    return res.send("Use /pair?number=2547XXXXXXXX");
-  }
-
-  try {
-    const code = await sock.requestPairingCode(number);
-
-    res.send(`
-      <html>
-        <head>
-          <title>CHARLTON BOT PAIR</title>
-        </head>
-        <body style="font-family:sans-serif;text-align:center;padding-top:50px;">
-          <h2>CHARLTON WHATSAPP BOT</h2>
-          <h1>${code}</h1>
-          <p>Open WhatsApp → Linked Devices → Link with phone number</p>
-        </body>
-      </html>
-    `);
-
-  } catch (err) {
-    console.log(err);
-    res.send("Failed to generate pairing code");
-  }
-});
-
-// =========================
-// WHATSAPP CONNECTION
-// =========================
-
-async function connectToWhatsApp() {
-  const { state, saveCreds } = await useMultiFileAuthState('auth_info_baileys');
-
-  sock = makeWASocket({
-    auth: state,
-    printQRInTerminal: false,
-    logger: pino({ level: 'silent' }),
-    browser: ['CHARLTON BOT', 'Chrome', '1.0']
-  });
-
-  sock.ev.on('creds.update', saveCreds);
-
-  sock.ev.on('connection.update', (update) => {
-    const { connection, lastDisconnect } = update;
-
-    if (connection === 'close') {
-      const shouldReconnect =
-        lastDisconnect?.error?.output?.statusCode !== DisconnectReason.loggedOut;
-
-      if (shouldReconnect) {
-        connectToWhatsApp();
-      } else {
-        log.info("Logged out. Restart required.");
-      }
-
-    } else if (connection === 'open') {
-      log.info("✅ WhatsApp Connected");
-    }
-  });
-
-  sock.ev.on('messages.upsert', async (m) => {
-    const message = m.messages[0];
-    if (!message.message || message.key.fromMe) return;
-
-    const messageText =
-      message.message.conversation ||
-      message.message.extendedTextMessage?.text ||
-      '';
-
-    const sender = message.key.remoteJid;
-    const isGroup = sender.endsWith('@g.us');
-    const senderName = message.pushName || 'User';
-
-    log.info(`📩 ${senderName}: ${messageText}`);
-
-    const commandResult = await commandHandler(
-      sock,
-      message,
-      messageText,
-      sender,
-      senderName,
-      isGroup
-    );
-
-    if (!commandResult) {
-      await autoReplyHandler(sock, message, messageText, sender, senderName, isGroup);
-    }
-  });
-}
-
-// =========================
-// START SERVER + BOT
-// =========================
+const {
+default: makeWASocket,
+useMultiFileAuthState,
+makeCacheableSignalKeyStore,
+DisconnectReason
+} = require('@whiskeysockets/baileys');
 
 const PORT = process.env.PORT || 3000;
+const sessions = new Map();
 
-app.listen(PORT, () => {
-  console.log("🌐 Server running on port " + PORT);
-  connectToWhatsApp();
+const HTML = `
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Netizen WhatsApp Pair</title>
+
+<style>
+body{
+background:#0d1117;
+font-family:sans-serif;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+color:white;
+margin:0;
+}
+
+.box{
+background:#161b22;
+padding:30px;
+border-radius:20px;
+width:350px;
+text-align:center;
+box-shadow:0 0 20px rgba(0,0,0,.4);
+}
+
+input{
+width:100%;
+padding:14px;
+border:none;
+border-radius:10px;
+margin-top:15px;
+background:#21262d;
+color:white;
+}
+
+button{
+width:100%;
+padding:14px;
+border:none;
+border-radius:10px;
+margin-top:15px;
+background:#25D366;
+color:white;
+font-weight:bold;
+cursor:pointer;
+}
+
+.code{
+margin-top:20px;
+font-size:30px;
+letter-spacing:5px;
+color:#25D366;
+font-weight:bold;
+}
+
+.small{
+font-size:13px;
+color:#8b949e;
+margin-top:15px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+<h2>🤖 Netizen Pair</h2>
+
+<input id="num" placeholder="254712345678">
+
+<button onclick="pair()">Get Pair Code</button>
+
+<div id="out"></div>
+
+<div class="small">
+Open WhatsApp → Linked Devices → Link with phone number
+</div>
+</div>
+
+<script>
+async function pair(){
+const num=document.getElementById('num').value;
+const out=document.getElementById('out');
+
+out.innerHTML='Generating...';
+
+const res=await fetch('/pair',{
+method:'POST',
+headers:{'Content-Type':'application/json'},
+body:JSON.stringify({number:num})
+});
+
+const data=await res.json();
+
+if(data.code){
+out.innerHTML='<div class="code">'+data.code+'</div>';
+}else{
+out.innerHTML='Failed';
+}
+}
+</script>
+
+</body>
+</html>
+`;
+
+async function createSession(number){
+
+const dir = path.join(__dirname,'sessions',number);
+
+if(!fs.existsSync(dir)){
+fs.mkdirSync(dir,{recursive:true});
+}
+
+const { state, saveCreds } = await useMultiFileAuthState(dir);
+
+const sock = makeWASocket({
+auth:{
+creds:state.creds,
+keys:makeCacheableSignalKeyStore(
+state.keys,
+pino({level:'silent'})
+)
+},
+printQRInTerminal:false,
+logger:pino({level:'silent'})
+});
+
+sock.ev.on('creds.update',saveCreds);
+
+return new Promise((resolve,reject)=>{
+
+sock.ev.on('connection.update',async(update)=>{
+
+const { connection } = update;
+
+if(connection==='open'){
+resolve('connected');
+}
+
+try{
+const code = await sock.requestPairingCode(number);
+resolve(code);
+}catch(e){}
+
+});
+});
+}
+
+const server = http.createServer(async(req,res)=>{
+
+if(req.url==='/' && req.method==='GET'){
+res.writeHead(200,{'Content-Type':'text/html'});
+return res.end(HTML);
+}
+
+if(req.url==='/pair' && req.method==='POST'){
+
+let body='';
+
+req.on('data',c=>body+=c);
+
+req.on('end',async()=>{
+
+try{
+
+const { number } = JSON.parse(body);
+
+const code = await createSession(number);
+
+res.writeHead(200,{
+'Content-Type':'application/json'
+});
+
+res.end(JSON.stringify({
+code
+}));
+
+}catch(e){
+
+res.writeHead(500,{
+'Content-Type':'application/json'
+});
+
+res.end(JSON.stringify({
+error:e.message
+}));
+
+}
+
+});
+
+return;
+}
+
+res.writeHead(404);
+res.end('Not Found');
+
+});
+
+server.listen(PORT,()=>{
+console.log('Running on '+PORT);
 });
