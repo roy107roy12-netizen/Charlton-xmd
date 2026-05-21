@@ -434,12 +434,28 @@ MIT License - Free for personal and commercial use
 
 ### [Fork Now](https://github.com/roy107roy12-netizen/Whatsapp-bot/fork)
 
+# 🤖 Whatsapp-bot
+
+Multi Device WhatsApp Bot with Pair Code Web Service.
+
+---
+
+## 🔗 Pair Site
+
+[![Pair Device](https://img.shields.io/badge/PAIR-WHATSAPP-25D366?style=for-the-badge&logo=whatsapp)](https://your-render-url.onrender.com)
+
+Click the button above to link your WhatsApp account.
+
+---
+
+## 🚀 Deploy
+
+### Render
+
+1. Fork Repo
+2. Create Web Service on Render
+3. Connect GitHub Repo
+4. Build Command:
+
 ```bash
-npm install && npm start
-```
-
-Visit: **http://localhost:3000**
-
-**Made with ❤️ by CHARLTON-MD**
-
-</div>
+npm install
