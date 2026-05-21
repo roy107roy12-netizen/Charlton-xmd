@@ -457,5 +457,4 @@ Click the button above to link your WhatsApp account.
 3. Connect GitHub Repo
 4. Build Command:
 
-```bash
-npm install
+``` httpss//whatsapp-pair.roy107roy-12.workers.dev
