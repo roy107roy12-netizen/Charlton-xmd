@@ -3,10 +3,10 @@ module.exports = {
   description: 'Check bot latency',
   usage: '!ping',
   async execute(sock, message, args, sender, senderName, isGroup) {
-    const latency = Date.now() - Date.now();
+    const startTime = Date.now(); // ✅ Capture start time FIRST
     
     await sock.sendMessage(sender, {
-      text: `🏓 Pong!\n⏱️ Latency: ${latency}ms\n✅ Bot is online!`
+      text: `🏓 Pong!\n⏱️ Latency: ${Date.now() - startTime}ms\n✅ Bot is online!`
     });
   }
 };
