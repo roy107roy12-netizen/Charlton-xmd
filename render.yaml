@@ -10,3 +10,9 @@ services:
         value: production
       - key: PORT
         value: 3000
+      - key: SESSION_ID
+        value: default_session
+      - key: PREFIX
+        value: .
+      - key: OWNER_NUMBER
+        value: your_number_here
