@@ -9,7 +9,7 @@
 
 **A powerful WhatsApp Multi-Device Bot built with Baileys API**
 
-[🔗 Live Pair Site](#-live-deployment) • [📚 Docs](#documentation) • [🚀 Deploy](#-deployment) • [🍴 Fork](#fork-the-repo)
+[🔗 Deploy to Heroku](#-deployment) • [📚 Docs](#documentation) • [🍴 Fork](#fork-the-repo)
 
 </div>
 
@@ -24,72 +24,43 @@
 - ✅ **Fast & Stable** - Built with Baileys for reliability
 - ✅ **Auto-Reconnect** - Handles disconnections gracefully
 - ✅ **Error Handling** - Comprehensive error management
-- ✅ **Easy Deployment** - Deploy to Heroku, Railway, Cloudflare, or any server
+- ✅ **Easy Deployment** - Deploy to Heroku with one click
 - ✅ **Public & Forkable** - Anyone can fork and deploy their own instance
 
 ---
 
-## 🌍 Live Deployment
+## 🚀 Quick Deployment to Heroku
 
-### **Active Pair Site** ✅
+### One-Click Deploy
 
-The bot is **NOW LIVE** and ready to use!
+[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?template=https://github.com/roy107roy12-netizen/Whatsapp-bot)
 
-**🔗 [Access Pair Site Here](https://whatsapp-bot-8-w4ja.onrender.com)**
+**Click the button above to deploy instantly to Heroku!**
 
-**URL:** `https://whatsapp-bot-8-w4ja.onrender.com`
+### Manual Heroku Deployment
 
-#### **Quick Start:**
-1. Click the link above
-2. Enter your WhatsApp phone number (format: `2547XXXXXXXX`)
-3. Click "Generate Code"
-4. Copy the pairing code
-5. Open WhatsApp → Settings → Linked Devices → Link Device
-6. Paste the code and done! ✅
+```bash
+# 1. Install Heroku CLI
+# Download from: https://devcenter.heroku.com/articles/heroku-cli
 
----
+# 2. Login to Heroku
+heroku login
 
-## 🔐 Pair Site - ACTIVE ✅
+# 3. Clone the repository
+git clone https://github.com/roy107roy12-netizen/Whatsapp-bot.git
+cd Whatsapp-bot
 
-### **Features**
-- 🎨 Beautiful modern UI with gradient background
-- 📱 Mobile responsive design
-- ⚡ Real-time pairing code generation
-- 🔒 Secure pairing code display
-- 📋 Feature showcase
-- 🔗 Quick links to GitHub
+# 4. Create Heroku app
+heroku create your-app-name
 
-#### **How to Use the Pair Site**
+# 5. Deploy
+git push heroku main
 
-1. **Visit the pair site:**
-   ```
-   https://whatsapp-bot-8-w4ja.onrender.com
-   ```
+# 6. View logs
+heroku logs --tail
+```
 
-2. **Enter your WhatsApp phone number:**
-   - Format: `2547XXXXXXXX` (include country code)
-   - Click "Generate Code"
-
-3. **Get your pairing code:**
-   - Code displays in large green text
-   - Valid for 1 minute
-   - Shows instructions
-
-4. **Complete pairing in WhatsApp:**
-   - Open WhatsApp on your phone
-   - Settings → Linked Devices
-   - Click "Link a Device"
-   - Paste the code from pair site
-   - Done! ✅
-
-#### **Pair Site Endpoints**
-
-| Endpoint | Purpose | Response |
-|----------|---------|----------|
-| `GET /` | Pair site UI | HTML page |
-| `GET /pair?number=254...` | Generate code | Pairing code |
-| `GET /health` | Health check | JSON status |
-| `GET /api/status` | Bot status | JSON info |
+**Your pair site will be at:** `https://your-app-name.herokuapp.com`
 
 ---
 
@@ -106,7 +77,7 @@ The bot is **NOW LIVE** and ready to use!
 
 ---
 
-## 🚀 Quick Start
+## 🚀 Quick Start (Local)
 
 ### Prerequisites
 - Node.js 20+
@@ -226,70 +197,6 @@ const autoReplies = [
 
 ---
 
-## 🌍 Deployment
-
-### Option 1: Render (Current)
-
-Your bot is already deployed at:
-```
-https://whatsapp-bot-8-w4ja.onrender.com
-```
-
-### Option 2: Heroku
-
-```bash
-# Create Heroku app
-heroku create your-app-name
-
-# Deploy
-git push heroku main
-
-# View logs
-heroku logs --tail
-```
-
-**Your pair site will be at:** `https://your-app-name.herokuapp.com`
-
-### Option 3: Railway.app
-
-```bash
-# Install Railway CLI
-npm install -g @railway/cli
-
-# Login and deploy
-railway login
-railway up
-```
-
-### Option 4: Cloudflare Workers
-
-```bash
-npm install -g wrangler
-wrangler login
-wrangler publish
-```
-
-### Option 5: Local/VPS
-
-```bash
-npm install
-npm start
-```
-
----
-
-## 🆚 Comparison
-
-| Feature | Local | Heroku | Railway | Render | Cloudflare |
-|---------|-------|--------|---------|--------|-----------|
-| **Cost** | Free | Free tier | $5/mo | Free | Free |
-| **Uptime** | While running | 99.9% | 99.9% | 99.9% | 99.99% |
-| **Setup** | Easy | Easy | Easy | Easy | Medium |
-| **Pair Site** | ✅ | ✅ | ✅ | ✅ | ✅ |
-| **Status** | Development | Production | Production | **ACTIVE** ⭐ | Static |
-
----
-
 ## 🐛 Troubleshooting
 
 ### Pair Site Not Loading?
@@ -372,14 +279,11 @@ Message bot with:
 # 2. Clone your fork
 git clone https://github.com/YOUR-USERNAME/Whatsapp-bot.git
 
-# 3. Deploy
+# 3. Deploy to Heroku
 cd Whatsapp-bot
-npm install
-npm start
+heroku create your-app-name
+git push heroku main
 ```
-
-### Deploy to Heroku
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?template=https://github.com/roy107roy12-netizen/Whatsapp-bot)
 
 ---
 
@@ -388,7 +292,6 @@ npm start
 | Document | Purpose |
 |----------|---------|
 | [DEPLOYMENT_GUIDE.md](./DEPLOYMENT_GUIDE.md) | Complete deployment setup |
-| [CLOUDFLARE_DEPLOYMENT.md](./CLOUDFLARE_DEPLOYMENT.md) | Cloudflare Workers setup |
 | [HEROKU_DEPLOYMENT.md](./HEROKU_DEPLOYMENT.md) | Heroku specific guide |
 
 ---
@@ -442,7 +345,7 @@ MIT License - Free for personal and commercial use
 
 ## 🎉 Ready to Get Started?
 
-### [🔗 Access Live Pair Site](https://whatsapp-bot-8-w4ja.onrender.com)
+### [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?template=https://github.com/roy107roy12-netizen/Whatsapp-bot)
 
 ### [Fork Now](https://github.com/roy107roy12-netizen/Whatsapp-bot/fork)
 
