@@ -9,7 +9,7 @@
 
 **A powerful WhatsApp Multi-Device Bot built with Baileys API**
 
-[🔗 Live Pair Site](#pair-site--active) • [📚 Docs](#documentation) • [🚀 Deploy](#deployment) • [🍴 Fork](#fork-the-repo)
+[🔗 Live Pair Site](#-live-deployment) • [📚 Docs](#documentation) • [🚀 Deploy](#-deployment) • [🍴 Fork](#fork-the-repo)
 
 </div>
 
@@ -29,19 +29,29 @@
 
 ---
 
+## 🌍 Live Deployment
+
+### **Active Pair Site** ✅
+
+The bot is **NOW LIVE** and ready to use!
+
+**🔗 [Access Pair Site Here](https://whatsapp-bot-8-w4ja.onrender.com)**
+
+**URL:** `https://whatsapp-bot-8-w4ja.onrender.com`
+
+#### **Quick Start:**
+1. Click the link above
+2. Enter your WhatsApp phone number (format: `2547XXXXXXXX`)
+3. Click "Generate Code"
+4. Copy the pairing code
+5. Open WhatsApp → Settings → Linked Devices → Link Device
+6. Paste the code and done! ✅
+
+---
+
 ## 🔐 Pair Site - ACTIVE ✅
 
-### **Live Pairing Site**
-
-The pairing site is **FULLY FUNCTIONAL** and built-in:
-
-#### **Quick Access**
-After deploying your bot, the pair site is automatically available:
-```
-http://localhost:3000
-```
-
-#### **Features**
+### **Features**
 - 🎨 Beautiful modern UI with gradient background
 - 📱 Mobile responsive design
 - ⚡ Real-time pairing code generation
@@ -51,28 +61,21 @@ http://localhost:3000
 
 #### **How to Use the Pair Site**
 
-1. **Start your bot:**
-   ```bash
-   npm install
-   npm start
+1. **Visit the pair site:**
+   ```
+   https://whatsapp-bot-8-w4ja.onrender.com
    ```
 
-2. **Open pair site in browser:**
-   ```
-   http://localhost:3000
-   ```
-   (Or your deployment URL)
-
-3. **Enter your WhatsApp phone number:**
+2. **Enter your WhatsApp phone number:**
    - Format: `2547XXXXXXXX` (include country code)
    - Click "Generate Code"
 
-4. **Get your pairing code:**
+3. **Get your pairing code:**
    - Code displays in large green text
    - Valid for 1 minute
    - Shows instructions
 
-5. **Complete pairing in WhatsApp:**
+4. **Complete pairing in WhatsApp:**
    - Open WhatsApp on your phone
    - Settings → Linked Devices
    - Click "Link a Device"
@@ -130,7 +133,7 @@ cp .env.example .env
 npm start
 ```
 
-### Access Pair Site
+### Access Pair Site Locally
 Open your browser: **http://localhost:3000**
 
 ---
@@ -225,7 +228,14 @@ const autoReplies = [
 
 ## 🌍 Deployment
 
-### Option 1: Heroku (Recommended)
+### Option 1: Render (Current)
+
+Your bot is already deployed at:
+```
+https://whatsapp-bot-8-w4ja.onrender.com
+```
+
+### Option 2: Heroku
 
 ```bash
 # Create Heroku app
@@ -240,7 +250,7 @@ heroku logs --tail
 
 **Your pair site will be at:** `https://your-app-name.herokuapp.com`
 
-### Option 2: Railway.app
+### Option 3: Railway.app
 
 ```bash
 # Install Railway CLI
@@ -251,7 +261,7 @@ railway login
 railway up
 ```
 
-### Option 3: Cloudflare Workers (Pair Site)
+### Option 4: Cloudflare Workers
 
 ```bash
 npm install -g wrangler
@@ -259,7 +269,7 @@ wrangler login
 wrangler publish
 ```
 
-### Option 4: Local/VPS
+### Option 5: Local/VPS
 
 ```bash
 npm install
@@ -270,13 +280,13 @@ npm start
 
 ## 🆚 Comparison
 
-| Feature | Local | Heroku | Railway | Cloudflare |
-|---------|-------|--------|---------|-----------|
-| **Cost** | Free | Free tier | $5/mo | Free |
-| **Uptime** | While running | 99.9% | 99.9% | 99.99% |
-| **Setup** | Easy | Easy | Easy | Medium |
-| **Pair Site** | ✅ | ✅ | ✅ | ✅ |
-| **Best for** | Testing | Production | Production | Static |
+| Feature | Local | Heroku | Railway | Render | Cloudflare |
+|---------|-------|--------|---------|--------|-----------|
+| **Cost** | Free | Free tier | $5/mo | Free | Free |
+| **Uptime** | While running | 99.9% | 99.9% | 99.9% | 99.99% |
+| **Setup** | Easy | Easy | Easy | Easy | Medium |
+| **Pair Site** | ✅ | ✅ | ✅ | ✅ | ✅ |
+| **Status** | Development | Production | Production | **ACTIVE** ⭐ | Static |
 
 ---
 
@@ -432,29 +442,10 @@ MIT License - Free for personal and commercial use
 
 ## 🎉 Ready to Get Started?
 
+### [🔗 Access Live Pair Site](https://whatsapp-bot-8-w4ja.onrender.com)
+
 ### [Fork Now](https://github.com/roy107roy12-netizen/Whatsapp-bot/fork)
 
-# 🤖 Whatsapp-bot
+**Made with ❤️ by Roy**
 
-Multi Device WhatsApp Bot with Pair Code Web Service.
-
----
-
-## 🔗 Pair Site
-
-[![Pair Device](https://img.shields.io/badge/PAIR-WHATSAPP-25D366?style=for-the-badge&logo=whatsapp)](https://your-render-url.onrender.com)
-
-Click the button above to link your WhatsApp account.
-
----
-
-## 🚀 Deploy
-
-### Render
-
-1. Fork Repo
-2. Create Web Service on Render
-3. Connect GitHub Repo
-4. Build Command:
-
-``` httpss//whatsapp-pair.roy107roy-12.workers.dev
+</div>
