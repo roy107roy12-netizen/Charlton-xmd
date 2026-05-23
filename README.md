@@ -29,6 +29,27 @@
 
 ---
 
+## 🌐 Pair Site
+
+The pair site is a web interface for pairing your WhatsApp account with the bot using a secure pairing code method.
+
+### Online Pair Site
+**Live URL:** https://whatsapp-bot-pairing.herokuapp.com
+
+### Local Pair Site
+When running the bot locally, access the pair site at:
+**http://localhost:3000**
+
+### How to Use Pair Site
+1. Open the pair site URL
+2. Enter your WhatsApp phone number (with country code)
+3. Click "Get Pairing Code"
+4. A code will be displayed on your WhatsApp linked device
+5. Enter the code in the pair site
+6. Your bot will be authenticated and ready to use!
+
+---
+
 ## 🚀 Quick Deployment to Heroku
 
 ### One-Click Deploy
