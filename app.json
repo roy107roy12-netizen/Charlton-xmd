@@ -1,87 +1,50 @@
 {
-  "name": "Whatsapp-bot",
-  "description": "This is a simple WhatsApp bot built with Node.js using Baileys for automation and fun features",
-  "keywords": [
-    "bot",
-    "whatsapp",
-    "whatsapp-bot",
-    "baileys",
-    "md-bot",
-    "automation"
-  ],
-  "website": "https://github.com/roy107roy12-netizen/Whatsapp-bot",
+  "name": "Netizen WhatsApp Bot Pairing Site",
+  "description": "WhatsApp Bot with session pairing UI and admin panel - Deploy on Heroku",
   "repository": "https://github.com/roy107roy12-netizen/Whatsapp-bot",
-  "logo": "https://i.ibb.co/PsZnb9NH/0d81ac6b1fb1.jpg",
-  "success_url": "/",
+  "keywords": ["whatsapp", "bot", "baileys", "nodejs", "pairing", "session"],
+  "image": "heroku/nodejs",
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
   "env": {
-    "OWNER_NUMBER": {
-      "description": "Bot owner phone number without + or spaces. Example: 2547XXXXXXXX",
-      "required": false
-    },
-    "SESSION": {
-      "description": "Your WhatsApp session ID (required to run bot)",
+    "NODE_ENV": {
+      "description": "Node environment (production)",
+      "value": "production",
       "required": true
     },
-    "DATABASE_URL": {
-      "description": "Database URL (optional)",
-      "required": false,
-      "value": ""
-    },
-    "AUTOVIEW_STATUS": {
-      "description": "Auto view WhatsApp status (true/false)",
-      "value": "true",
+    "PORT": {
+      "description": "Server port (Heroku will auto-assign)",
+      "value": "3000",
       "required": false
     },
-    "AUTOLIKE_STATUS": {
-      "description": "Auto like WhatsApp status (true/false)",
-      "value": "true",
-      "required": false
-    },
-    "STATUS_LIKE_EMOJIS": {
-      "description": "Emojis for auto status like (comma separated)",
-      "value": "💚,🩵",
+    "SESSION_ID": {
+      "description": "Session identifier for WhatsApp",
+      "value": "default_session",
       "required": false
     },
     "PREFIX": {
-      "description": "Bot command prefix",
+      "description": "Command prefix for bot commands",
       "value": ".",
       "required": false
     },
-    "BOT_EXPIRATION_DATE": {
-      "description": "Bot expiration date (dd/mm/yy)",
-      "value": "11/03/2027",
-      "required": false
-    },
-    "BOT_PIC": {
-      "description": "Bot profile picture URL",
-      "value": "https://i.ibb.co/twqdcc2y/ba0d6b394b57.jpg",
-      "required": false
-    },
-    "BOTNAME": {
-      "description": "Bot display name",
-      "value": "Whatsapp-bot",
-      "required": false
-    },
-    "AUTO_SOCIAL_DOWNLOAD": {
-      "description": "Auto download social media videos (true/false)",
-      "value": "false",
-      "required": false
-    },
-    "OWNER_NAME": {
-      "description": "Owner name",
-      "value": "charlton",
-      "required": false
-    },
-    "MODE": {
-      "description": "Bot mode (public/private)",
-      "value": "public",
-      "required": false
+    "OWNER_NUMBER": {
+      "description": "Owner's WhatsApp number (with country code, e.g., 254712345678)",
+      "value": "your_number_here",
+      "required": true
     }
   },
-  "buildpacks": [
-    {
-      "url": "https://github.com/heroku/heroku-buildpack-nodejs.git"
+  "addons": [],
+  "scripts": {
+    "postdeploy": "npm install"
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "free"
     }
-  ],
-  "stack": "heroku-24"
+  },
+  "success_url": "/"
 }
