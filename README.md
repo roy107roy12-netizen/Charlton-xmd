@@ -21,7 +21,7 @@ Simple WhatsApp Multi Device Bot built with Baileys API.
 
    <td align="center">
       <b>🔗 PAIR SESSION</b><br><br>
-      <a href="https://charlton-xmd.vercel.app">
+      <a href="https://session.gifted.co.ke/roy107roy12-netizen/Charlton-xmd">
         <img src="https://img.shields.io/badge/PAIR-SESSION-white?style=for-the-badge" width="220">
       </a>
     </td>
@@ -59,7 +59,7 @@ Simple WhatsApp Multi Device Bot built with Baileys API.
 # 🌐 PAIR SITE
 
 ```bash
-https://charlton-xmd.vercel.app
+https://session.gifted.co.ke/roy107roy12-netizen/Charlton-xmd
 ```
 
 ---
