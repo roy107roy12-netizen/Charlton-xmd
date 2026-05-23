@@ -34,6 +34,11 @@
       "description": "Owner's WhatsApp number (with country code, e.g., 254712345678)",
       "value": "your_number_here",
       "required": true
+    },
+    "PAIR_SITE_URL": {
+      "description": "Active pairing site URL",
+      "value": "https://kpl-26293a8556cb.herokuapp.com/",
+      "required": false
     }
   },
   "addons": [],
