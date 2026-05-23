@@ -1,17 +1,16 @@
-# 🤖 CHARLTON-MD - WhatsApp Bot
-
 <div align="center">
 
-![CHARLTON BOT](https://img.shields.io/badge/CHARLTON--MD-WhatsApp%20Bot-blue?style=for-the-badge&logo=whatsapp)
-![Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)
-![Node](https://img.shields.io/badge/Node-20.x-green?style=for-the-badge&logo=node.js)
-![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
+# 🤖 Netizen WhatsApp Bot
 
-**A powerful WhatsApp Multi-Device Bot built with Baileys API**
+[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?template=https://github.com/roy107roy12-netizen/Whatsapp-bot)
 
-[🔗 Deploy to Heroku](#-deployment) • [📚 Docs](#documentation) • [🍴 Fork](#fork-the-repo)
+[![Fork this repo](https://img.shields.io/badge/Fork-this%20repo-blue?style=for-the-badge&logo=github)](https://github.com/roy107roy12-netizen/Whatsapp-bot/fork)
 
 </div>
+
+---
+
+**A powerful WhatsApp Multi-Device Bot built with Baileys API**
 
 ---
 
@@ -34,7 +33,7 @@
 The pair site is a web interface for pairing your WhatsApp account with the bot using a secure pairing code method.
 
 ### Online Pair Site
-**Live URL:** https://whatsapp-bot-pairing.herokuapp.com
+**Live URL:** https://kpl-26293a8556cb.herokuapp.com/
 
 ### Local Pair Site
 When running the bot locally, access the pair site at:
@@ -178,6 +177,9 @@ PORT=3000
 
 # Environment
 NODE_ENV=production
+
+# Active Pair Site URL
+PAIR_SITE_URL=https://kpl-26293a8556cb.herokuapp.com/
 ```
 
 ---
@@ -330,7 +332,7 @@ git push heroku main
 
 ## 🤝 Contributing
 
-### Want to improve CHARLTON-MD?
+### Want to improve this bot?
 1. Fork the repository
 2. Create feature branch: `git checkout -b feature/awesome`
 3. Commit: `git commit -m 'Add awesome feature'`
@@ -368,7 +370,7 @@ MIT License - Free for personal and commercial use
 
 ### [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?template=https://github.com/roy107roy12-netizen/Whatsapp-bot)
 
-### [Fork Now](https://github.com/roy107roy12-netizen/Whatsapp-bot/fork)
+### [![Fork this repo](https://img.shields.io/badge/Fork-this%20repo-blue?style=for-the-badge&logo=github)](https://github.com/roy107roy12-netizen/Whatsapp-bot/fork)
 
 **Made with ❤️ by Roy**
 
