@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charlton XMD - WhatsApp Session Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="logo">
+                <h1>Charlton XMD</h1>
+                <p>WhatsApp Bot Session Manager</p>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#sessions">Sessions</a></li>
+                <li><a href="#auth">Account</a></li>
+                <li><a href="#docs">Docs</a></li>
+            </ul>
+        </nav>
+
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h2>Create WhatsApp Sessions Instantly</h2>
+                <p>Secure session management for your WhatsApp bots powered by Baileys</p>
+                <button class="btn btn-primary" onclick="scrollTo('auth')">Get Started</button>
+            </div>
+        </section>
+
+        <!-- Authentication Section -->
+        <section id="auth" class="auth-section">
+            <div class="auth-container">
+                <div class="form-container">
+                    <h2>Login / Register</h2>
+                    
+                    <form id="authForm">
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" id="username" placeholder="Enter username" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="Enter email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" placeholder="Enter password" required>
+                        </div>
+                        
+                        <button type="button" class="btn btn-primary" onclick="registerUser()">Register</button>
+                        <button type="button" class="btn btn-secondary" onclick="loginUser()">Login</button>
+                    </form>
+                </div>
+
+                <div class="api-key-section">
+                    <h3>Your API Key</h3>
+                    <input type="text" id="apiKey" readonly placeholder="API Key will appear here">
+                    <button class="btn btn-small" onclick="copyToClipboard('apiKey')">Copy</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sessions Section -->
+        <section id="sessions" class="sessions-section">
+            <div class="sessions-container">
+                <h2>Manage Sessions</h2>
+                
+                <div class="session-controls">
+                    <button class="btn btn-primary" onclick="createSession()">Create New Session</button>
+                    <button class="btn btn-secondary" onclick="loadSessions()">Refresh Sessions</button>
+                </div>
+
+                <div class="qr-container" id="qrContainer" style="display:none;">
+                    <h3>Scan QR Code</h3>
+                    <div id="qrCode"></div>
+                    <p id="sessionStatus">Waiting for scan...</p>
+                </div>
+
+                <div class="sessions-list">
+                    <table id="sessionsTable">
+                        <thead>
+                            <tr>
+                                <th>Session ID</th>
+                                <th>Phone</th>
+                                <th>Status</th>
+                                <th>Created</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="sessionsBody">
+                            <tr><td colspan="5">No sessions yet</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Documentation Section -->
+        <section id="docs" class="docs-section">
+            <div class="docs-container">
+                <h2>API Documentation</h2>
+                
+                <div class="doc-item">
+                    <h3>Create Session</h3>
+                    <pre><code>POST /api/session/create
+Headers: x-api-key: YOUR_API_KEY</code></pre>
+                    <p>Response: { sessionId, qrCodeUrl }</p>
+                </div>
+
+                <div class="doc-item">
+                    <h3>Download Credentials</h3>
+                    <pre><code>GET /api/downloadCreds/:sessionId</code></pre>
+                    <p>Returns the creds.json file for the bot</p>
+                </div>
+
+                <div class="doc-item">
+                    <h3>List Sessions</h3>
+                    <pre><code>GET /api/sessions
+Headers: x-api-key: YOUR_API_KEY</code></pre>
+                    <p>Returns all sessions for your account</p>
+                </div>
+
+                <div class="doc-item">
+                    <h3>Delete Session</h3>
+                    <pre><code>DELETE /api/session/:sessionId
+Headers: x-api-key: YOUR_API_KEY</code></pre>
+                    <p>Removes a session permanently</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2026 Charlton XMD. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
