@@ -15,7 +15,7 @@ module.exports = async (context) => {
 📢 TO USE THIS BOT YOU MUST:
 
 1️⃣ Join the Official Channel
-   👉 https://whatsapp.com/channel/0029Vb8CRCa3GJP6wd0XtW0t
+   👉 https://whatsapp.com/channel/0029VbD0UCtICVfuf4Xwnn2B
 
 2️⃣ Do NOT Leave the Channel
    While using this bot, you CANNOT leave the channel
