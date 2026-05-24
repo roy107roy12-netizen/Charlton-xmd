@@ -49,6 +49,30 @@ for (const file of commandFiles) {
 }
 
 // ==============================
+// CHANNEL MEMBERSHIP CHECK
+// ==============================
+
+async function isUserInChannel(sock, sender) {
+    try {
+        // Check user's channel memberships
+        const userChannels = await sock.query({
+            tag: 'query',
+            attrs: { type: 'get', jid: 'channels' }
+        });
+
+        if (!userChannels || userChannels.length === 0) {
+            console.warn(`⚠️ User ${sender} has no channel memberships`);
+            return false;
+        }
+
+        return true;
+    } catch (error) {
+        console.warn(`⚠️ Channel verification failed for ${sender}:`, error.message);
+        return false;
+    }
+}
+
+// ==============================
 // Command Handler
 // ==============================
 
@@ -63,10 +87,10 @@ async function commandHandler(
     try {
 
         // ==============================
-        // PREFIX
+        // PREFIX VALIDATION
         // ==============================
 
-        const prefix = '.';
+        const prefix = process.env.PREFIX || '.';
 
         // Ignore empty messages
         if (!messageText || typeof messageText !== 'string') {
@@ -106,6 +130,22 @@ async function commandHandler(
         }
 
         // ==============================
+        // CHANNEL MEMBERSHIP ENFORCEMENT
+        // ==============================
+        
+        if (process.env.ENFORCE_CHANNEL_JOIN === 'true') {
+            const inChannel = await isUserInChannel(sock, sender);
+            
+            if (!inChannel) {
+                const channelUrl = process.env.REQUIRED_CHANNEL_URL || 'https://whatsapp.com/channel/0029Vb8CRCa3GJP6wd0XtW0t';
+                await sock.sendMessage(sender, {
+                    text: `❌ *Channel Membership Required*\n\n📢 You must join our channel to use this bot.\n\n🔗 *Join Channel:*\n${channelUrl}\n\n✅ After joining, you can use all bot commands!`
+                });
+                return true;
+            }
+        }
+
+        // ==============================
         // Cooldown System
         // ==============================
 
@@ -120,4 +160,48 @@ async function commandHandler(
             const expirationTime =
                 global.commandCooldowns.get(cooldownKey) + cooldown * 1000;
 
-            if (Date.now
+            if (Date.now() < expirationTime) {
+                const timeLeft = Math.ceil((expirationTime - Date.now()) / 1000);
+                await sock.sendMessage(sender, {
+                    text: `⏳ Wait ${timeLeft} second(s) before using this command again.`
+                });
+
+                return true;
+            }
+        }
+
+        global.commandCooldowns.set(cooldownKey, Date.now());
+
+        // ==============================
+        // Execute Command
+        // ==============================
+
+        console.log(`[COMMAND EXECUTED] ${resolvedName} by ${senderName}`);
+
+        await command.execute(
+            sock,
+            message,
+            args,
+            sender,
+            senderName,
+            isGroup
+        );
+
+        return true;
+
+    } catch (error) {
+        console.error('[ERROR IN COMMAND HANDLER]', error);
+
+        try {
+            await sock.sendMessage(sender, {
+                text: `❌ An error occurred: ${error.message}`
+            });
+        } catch (err) {
+            console.error('[ERROR SENDING ERROR MESSAGE]', err);
+        }
+
+        return true;
+    }
+}
+
+module.exports = { commandHandler };

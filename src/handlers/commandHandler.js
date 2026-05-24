@@ -6,11 +6,13 @@ const fs = require('fs');
 const log = pino({ transport: { target: 'pino-pretty' } });
 const commands = new Map();
 
-// Load all commands with error handling
+// ==============================
+// Load Commands
+// ==============================
+
 function loadCommands() {
   const commandsPath = path.join(__dirname, '../commands');
   
-  // Create commands directory if it doesn't exist
   if (!fs.existsSync(commandsPath)) {
     fs.mkdirSync(commandsPath, { recursive: true });
     log.warn(`⚠️ Created empty commands directory. Add commands to: ${commandsPath}`);
@@ -30,7 +32,6 @@ function loadCommands() {
         const commandPath = path.join(commandsPath, file);
         const command = require(commandPath);
         
-        // Validate command structure
         if (!command.name || !command.execute) {
           log.error(`❌ Command ${file} missing required properties (name, execute)`);
           continue;
@@ -48,6 +49,36 @@ function loadCommands() {
 }
 
 loadCommands();
+
+// ==============================
+// CHANNEL MEMBERSHIP CHECK
+// ==============================
+
+/**
+ * Check if user is a member of the required channel
+ */
+async function isUserInChannel(sock, sender) {
+  try {
+    const userChannels = await sock.query({
+      tag: 'query',
+      attrs: { type: 'get', jid: 'channels' }
+    });
+
+    if (!userChannels || userChannels.length === 0) {
+      log.warn(`⚠️ Could not verify channel membership for ${sender}`);
+      return false;
+    }
+
+    return true;
+  } catch (error) {
+    log.warn(`⚠️ Channel verification failed for ${sender}:`, error.message);
+    return false;
+  }
+}
+
+// ==============================
+// MAIN COMMAND HANDLER
+// ==============================
 
 async function commandHandler(sock, message, messageText, sender, senderName, isGroup) {
   try {
@@ -70,14 +101,29 @@ async function commandHandler(sock, message, messageText, sender, senderName, is
       return false;
     }
 
-    log.info(`🚀 Executing command: ${commandName}`);
+    // ==============================
+    // CHANNEL MEMBERSHIP ENFORCEMENT
+    // ==============================
+    if (process.env.ENFORCE_CHANNEL_JOIN === 'true') {
+      const inChannel = await isUserInChannel(sock, sender);
+      
+      if (!inChannel) {
+        const channelUrl = process.env.REQUIRED_CHANNEL_URL || 'https://whatsapp.com/channel/0029Vb8CRCa3GJP6wd0XtW0t';
+        await sock.sendMessage(sender, {
+          text: `❌ *Channel Membership Required*\n\n📢 You must join our channel to use this bot.\n\n🔗 *Join Channel:*\n${channelUrl}\n\n✅ After joining, you can use all bot commands!`
+        });
+        return true;
+      }
+    }
+
+    log.info(`🚀 Executing command: ${commandName} from ${senderName}`);
     await command.execute(sock, message, args, sender, senderName, isGroup);
     return true;
   } catch (error) {
     log.error(`❌ Error in commandHandler:`, error.message);
     try {
       await sock.sendMessage(sender, {
-        text: `❌ Error executing command: ${error.message}`
+        text: `❌ *Error*\nAn error occurred while executing the command.\n\n${error.message}`
       });
     } catch (sendError) {
       log.error('❌ Error sending error message:', sendError.message);
