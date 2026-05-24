@@ -54,11 +54,7 @@
   "description": "Your bot display name",
   "value": "CHARLTON-MD",
   "required": false
-}"PREFIX": {
-  "description": "Command prefix like . or !",
-  "value": ".",
-  "required": false
-}"MODE": {
+"MODE": {
   "description": "Bot mode: public or private",
   "value": "public",
   "required": false
