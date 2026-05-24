@@ -54,14 +54,6 @@
   "description": "Your bot display name",
   "value": "CHARLTON-MD",
   "required": false
-}"AUTOREACT": {
-  "description": "Auto react to messages (true/false)",
-  "value": "false",
-  "required": false
-}"AUTOREAD": {
-  "description": "Auto read messages (true/false)",
-  "value": "true",
-  "required": false
 }"PREFIX": {
   "description": "Command prefix like . or !",
   "value": ".",
