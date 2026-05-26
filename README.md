@@ -21,7 +21,7 @@ Simple WhatsApp Multi Device Bot built with Baileys API with WhatsApp Channel Me
 
    <td align="center">
       <b>🔗 PAIR SESSION</b><br><br>
-      <a href="https://session.gifted.co.ke/roy107roy12-netizen/Charlton-xmd">
+      <a href="https://charlton-xmd-sync.base44.app">
         <img src="https://img.shields.io/badge/PAIR-SESSION-white?style=for-the-badge" width="220">
       </a>
     </td>
