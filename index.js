@@ -3,7 +3,25 @@ const fs = require('fs');
 const path = require('path');
 const QRCode = require('qrcode');
 const pino = require('pino');
+const server = http.createServer(async(req,res)=>{
 
+  // ✅ CORS HEADERS — required for external sites to call this API
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+  if (req.method === 'OPTIONS') {
+    res.writeHead(204);
+    return res.end();
+  }
+
+  if(req.url==='/' && req.method==='GET'){   // ← rest of your code stays the same
+Copy just those 7 lines and paste them right after const server = http.createServer(async(req,res)=>{ in your GitHub index.js. Commit → push → Heroku redeploys in ~1 min → pairing will work! ✅
+
+a minute ago
+
+Latest messages
+You're out of daily credits on your Free 
 const {
 default: makeWASocket,
 useMultiFileAuthState,
