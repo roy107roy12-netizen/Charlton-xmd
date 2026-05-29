@@ -21,7 +21,7 @@ Simple WhatsApp Multi Device Bot built with Baileys API with WhatsApp Channel Me
 
    <td align="center">
       <b>🔗 PAIR SESSION</b><br><br>
-      <a href="https://charlton-xmd-sync.base44.app">
+      <a href="bot-deployer--otienojunior806.replit.app ">
         <img src="https://img.shields.io/badge/PAIR-SESSION-white?style=for-the-badge" width="220">
       </a>
     </td>
