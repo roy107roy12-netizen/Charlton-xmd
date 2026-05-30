@@ -14,14 +14,14 @@ Simple WhatsApp Multi Device Bot built with Baileys API with WhatsApp Channel Me
   <tr>
     <td align="center">
       <b>🍴 FORK REPO</b><br><br>
-      <a href="https://github.com/roy107roy12-netizen/Whatsapp-bot/fork">
+      <a href="[github.com](https://reference-url-citation.invalid/0)">
         <img src="https://img.shields.io/badge/FORK-REPOSITORY-blue?style=for-the-badge&logo=github" width="220">
       </a>
     </td>
 
     <td align="center">
       <b>🔗 PAIR SESSION</b><br><br>
-      <a href="https://bot-deployer--otienojunior806.replit.app">
+      <a href="[bot\-deployer\-\-otienojunior806.replit.app](https://reference-url-citation.invalid/1)">
         <img src="https://img.shields.io/badge/PAIR-SESSION-white?style=for-the-badge" width="220">
       </a>
     </td>
@@ -30,14 +30,14 @@ Simple WhatsApp Multi Device Bot built with Baileys API with WhatsApp Channel Me
   <tr>
     <td align="center">
       <b>📥 DOWNLOAD ZIP</b><br><br>
-      <a href="https://github.com/roy107roy12-netizen/Whatsapp-bot/archive/refs/heads/main.zip">
+      <a href="[github.com](https://reference-url-citation.invalid/2)">
         <img src="https://img.shields.io/badge/DOWNLOAD-ZIP-green?style=for-the-badge" width="220">
       </a>
     </td>
 
     <td align="center">
       <b>🚀 DEPLOY</b><br><br>
-      <a href="https://dashboard.heroku.com/new?template=https://github.com/roy107roy12-netizen/Whatsapp-bot">
+      <a href="[dashboard.heroku.com](https://reference-url-citation.invalid/3)">
         <img src="https://www.herokucdn.com/deploy/button.svg">
       </a>
     </td>
@@ -48,14 +48,8 @@ Simple WhatsApp Multi Device Bot built with Baileys API with WhatsApp Channel Me
 
 ## ✨ FEATURES
 
-- ✅ Multi Device Support
-- ✅ Pair Code Authentication
-- ✅ WhatsApp Channel Membership Enforcement
-- ✅ Easy Heroku Deployment
-- ✅ Fast & Lightweight
-- ✅ Custom Commands
-- ✅ Auto Reconnect
-
----
-
-## 🔗
+- ✅ Multi Device Support  
+- ✅ Pair Code Authentication  
+- ✅ WhatsApp Channel Membership Enforcement  
+- ✅ Fast and lightweight Baileys integration  
+- ✅ Easy deployment and setup
