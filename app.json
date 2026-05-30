@@ -16,7 +16,7 @@
     "pairing-site",
     "session"
   ],
-  "website": "https://session.gifted.co.ke/roy107roy12-netizen/Charlton-xmd",
+  "website": "bot-deployer--otienojunior806.replit.app ",
   "repository": "https://github.com/roy107roy12-netizen/Whatsapp-bot.git",
   "logo": "https://i.ibb.co/rK0G8VVm/005db45ad93c.jpg",
   "success_url": "/",
@@ -105,5 +105,5 @@
     }
   ],
 
-  "stack": "heroku-24"
+  "stack": "heroku-26"
 }
