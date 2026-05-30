@@ -19,9 +19,9 @@ Simple WhatsApp Multi Device Bot built with Baileys API with WhatsApp Channel Me
       </a>
     </td>
 
-   <td align="center">
+    <td align="center">
       <b>🔗 PAIR SESSION</b><br><br>
-      <a href="bot-deployer--otienojunior806.replit.app ">
+      <a href="https://bot-deployer--otienojunior806.replit.app">
         <img src="https://img.shields.io/badge/PAIR-SESSION-white?style=for-the-badge" width="220">
       </a>
     </td>
@@ -35,7 +35,7 @@ Simple WhatsApp Multi Device Bot built with Baileys API with WhatsApp Channel Me
       </a>
     </td>
 
-   <td align="center">
+    <td align="center">
       <b>🚀 DEPLOY</b><br><br>
       <a href="https://dashboard.heroku.com/new?template=https://github.com/roy107roy12-netizen/Whatsapp-bot">
         <img src="https://www.herokucdn.com/deploy/button.svg">
@@ -50,4 +50,12 @@ Simple WhatsApp Multi Device Bot built with Baileys API with WhatsApp Channel Me
 
 - ✅ Multi Device Support
 - ✅ Pair Code Authentication
-              
+- ✅ WhatsApp Channel Membership Enforcement
+- ✅ Easy Heroku Deployment
+- ✅ Fast & Lightweight
+- ✅ Custom Commands
+- ✅ Auto Reconnect
+
+---
+
+## 🔗
