@@ -1,23 +1,18 @@
 {
   "name": "CHARLTON-MD",
-  "description": "This is a simple whatsapp bot built with nodejs to make your WhatsApp enjoyable",
+  "description": "This is a simple WhatsApp bot built with Node.js to make WhatsApp automation easy and fun.",
   "keywords": [
     "bot",
     "whatsapp",
-    "charlton",
-    "whatsapp-stickers",
-    "anime",
-    "whatsapp-bot",
-    "whatsapp-sticker-bot",
-    "whatsapp-botto",
+    "md",
     "baileys",
-    "baileys-md",
-    "md-bot",
-    "pairing-site",
-    "session"
+    "whatsapp-bot",
+    "automation",
+    "session",
+    "pairing"
   ],
-  "website": "bot-deployer--otienojunior806.replit.app ",
-  "repository": "https://github.com/roy107roy12-netizen/Whatsapp-bot.git",
+  "website": "https://bot-deployer--otienojunior806.replit.app",
+  "repository": "https://github.com/roy107roy12-netizen/Charlton-xmd",
   "logo": "https://i.ibb.co/rK0G8VVm/005db45ad93c.jpg",
   "success_url": "/",
 
@@ -34,7 +29,6 @@
 
     "DATABASE_URL": {
       "description": "Insert your database URL",
-      "value": "",
       "required": false
     },
 
@@ -51,7 +45,7 @@
     },
 
     "STATUS_LIKE_EMOJIS": {
-      "description": "Emojis to use for liking status (comma-separated)",
+      "description": "Emojis for status reactions (comma-separated)",
       "value": "💚,🔥",
       "required": false
     },
@@ -63,7 +57,7 @@
     },
 
     "BOT_EXPIRATION_DATE": {
-      "description": "Choose your preferred bot expiration date in the format dd/mm/yy",
+      "description": "Bot expiry date (dd/mm/yy)",
       "value": "11/03/2027",
       "required": false
     },
@@ -81,19 +75,19 @@
     },
 
     "AUTO_SOCIAL_DOWNLOAD": {
-      "description": "When enabled true bot will automatically download social media videos when you share the url example for tiktok instagram youtube and many more",
+      "description": "Auto download social media links",
       "value": "false",
       "required": false
     },
 
     "OWNER_NAME": {
-      "description": "Your bot owner name",
+      "description": "Owner name",
       "value": "Charlton",
       "required": false
     },
 
     "MODE": {
-      "description": "Bot operation mode (public/private)",
+      "description": "Bot mode (public/private)",
       "value": "public",
       "required": false
     }
@@ -101,7 +95,7 @@
 
   "buildpacks": [
     {
-      "url": "https://github.com/heroku/heroku-buildpack-nodejs.git"
+      "url": "heroku/nodejs"
     }
   ],
 
