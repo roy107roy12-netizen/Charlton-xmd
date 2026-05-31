@@ -1,7 +1,7 @@
 <h1 align="center">CHARLTON-XMD</h1>
 
 <p align="center">
-A simple WhatsApp bot base using modern WhatsApp API for automation, pairing session, and easy deployment.
+A simple WhatsApp bot base built with Node.js for automation, pairing session, and easy deployment.
 </p>
 
 <p align="center">
@@ -14,7 +14,7 @@ A simple WhatsApp bot base using modern WhatsApp API for automation, pairing ses
 - WhatsApp bot automation  
 - Session pairing system  
 - Easy fork & deploy setup  
-- Fast and lightweight  
+- Lightweight and fast  
 
 ---
 
@@ -48,7 +48,7 @@ A simple WhatsApp bot base using modern WhatsApp API for automation, pairing ses
 
 ---
 
-## 📦 DOWNLOAD
+## 📦 DOWNLOAD SOURCE
 
 <p align="center">
 <a href="https://github.com/roy107roy12-netizen/Charlton-xmd/archive/refs/heads/main.zip">
@@ -61,17 +61,17 @@ A simple WhatsApp bot base using modern WhatsApp API for automation, pairing ses
 ## 🚀 DEPLOY
 
 <p align="center">
-<a href="https://www.heroku.com">
+<a href="https://heroku.com/deploy?template=https://github.com/roy107roy12-netizen/Charlton-xmd">
   <img src="https://www.herokucdn.com/deploy/button.svg"/>
 </a>
 </p>
 
 ---
 
-## ⚠️ NOTE
-- Do not share session ID publicly  
-- Keep your credentials safe  
-- Configure environment variables correctly before deploying  
+## ⚠️ IMPORTANT
+- Do not share your session ID publicly  
+- Keep your environment variables safe  
+- Ensure all required configs are set before deploying  
 
 ---
 
