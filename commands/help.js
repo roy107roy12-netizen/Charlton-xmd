@@ -1,94 +1,92 @@
-/**
- * Help Command - Show command documentation
- * With mandatory channel join requirement
- */
+// commands/help.js
+const { charlton } = require('../commandHandler');
 
-module.exports = async (context) => {
-  const { m, args } = context;
+module.exports = charlton(
+    {
+        name: 'help',
+        description: 'Show all available commands',
+        category: 'General',
+        usage: '.help [command]',
+        react: '📚',
+    },
+    async (sock, msg, args) => {
+        const prefix = process.env.PREFIX || '.';
+        const from = msg.key.remoteJid;
 
-  // Channel requirement info
-  const channelRequired = `
-╭─────────────────────────────╮
-│  ⚠️ IMPORTANT - MANDATORY  │
-╰─────────────────────────────╯
+        let helpText = `
+╔════════════════════════════════╗
+     🤖 CHARLTON-XMD HELP 🤖
+╚════════════════════════════════╝
 
-📢 TO USE THIS BOT YOU MUST:
+💬 *Command Usage:* ${prefix}command
 
-1️⃣ Join the Official Channel
-   👉 https://whatsapp.com/channel/0029VbD0UCtICVfuf4Xwnn2B
+📂 *Available Categories:*
+  1️⃣ General Commands
+  2️⃣ Fun & Entertainment  
+  3️⃣ Bot Information
+  4️⃣ Admin Commands
 
-2️⃣ Do NOT Leave the Channel
-   While using this bot, you CANNOT leave the channel
+*Type:* ${prefix}help <command_name>
+*Example:* ${prefix}help ping
 
-3️⃣ Channel Benefits
-   ✅ Latest bot updates
-   ✅ Feature announcements
-   ✅ Security notices
-   ✅ Support information
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+*General Commands:*
+  ${prefix}ping - Check bot response time ⚡
+  ${prefix}menu - Display bot menu 📋
+  ${prefix}uptime - Show bot uptime ⏱️
+  ${prefix}echo <text> - Echo your message 📢
 
-⚠️ NOT FOLLOWING THIS RULE?
-└─ Your bot access will be SUSPENDED
-`;
+*Fun Commands:*
+  ${prefix}hello - Get a greeting 👋
+  ${prefix}joke - Random joke 😂
+  ${prefix}quote - Inspirational quote 💭
+  ${prefix}dice - Roll a dice 🎲
+  ${prefix}random - Generate random number 🎯
 
-  const commands = {
-    antidelete: 'Restore automatically deleted messages',
-    antistatus: 'Block or auto-delete status updates',
-    security: 'Manage all security settings',
-    ping: 'Check bot response time',
-    menu: 'Show all available commands',
-    owner: 'Show bot owner information & contact',
-    admin: 'Admin panel for bot management',
-    help: 'Display help information'
-  };
+*Bot Info:*
+  ${prefix}about - About this bot ℹ️
+  ${prefix}owner - Bot owner info 👤
+  ${prefix}support - Get support link 🆘
+  ${prefix}source - Source code link 💻
 
-  if (args[0]) {
-    const cmd = args[0].toLowerCase();
-    if (commands[cmd]) {
-      return m.reply(`📖 *Help: ${cmd}*\n\n${commands[cmd]}\n\n${channelRequired}`);
+*Admin Commands:*
+  ${prefix}promote [@user] - Promote user 📈
+  ${prefix}demote [@user] - Demote user 📉
+  ${prefix}kick [@user] - Remove user 🚫
+  ${prefix}mute - Mute group 🔇
+  ${prefix}unmute - Unmute group 🔊
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+💡 *Tips:*
+  • Use ${prefix}help <command> for more info
+  • Commands work in DM and groups
+  • Some commands require admin rights
+
+Made with ❤️ by Charlton
+        `;
+
+        if (args[0]) {
+            const cmd = args[0].toLowerCase();
+            const commands = {
+                'ping': `${prefix}ping\n\nCheck if the bot is responding and show response time.`,
+                'menu': `${prefix}menu\n\nDisplay the main bot menu with all features.`,
+                'hello': `${prefix}hello\n\nGet a friendly greeting from the bot.`,
+                'joke': `${prefix}joke\n\nReceive a random funny joke.`,
+                'quote': `${prefix}quote\n\nGet an inspirational quote to motivate you.`,
+                'dice': `${prefix}dice\n\nRoll a virtual dice (1-6).`,
+            };
+
+            if (commands[cmd]) {
+                helpText = `\n📖 *Command Information*\n\n${commands[cmd]}`;
+            }
+        }
+
+        try {
+            await sock.sendMessage(from, { text: helpText });
+        } catch (error) {
+            console.error('Help command error:', error);
+        }
     }
-    return m.reply('❌ Command not found. Type .help to see all commands');
-  }
-
-  let helpText = `
-╭─────────────────────────────╮
-│      📚 HELP MENU           │
-╰─────────────────────────────╯
-
-🎯 *AVAILABLE COMMANDS*
-
-Security Commands:
-├─ .antidelete  - Restore deleted messages
-├─ .antistatus  - Auto-delete status updates
-├─ .security    - Manage security settings
-└─ .admin       - Admin dashboard
-
-General Commands:
-├─ .menu        - Show all bot commands
-├─ .ping        - Check bot response
-├─ .owner       - Owner contact info
-├─ .help        - This help menu
-└─ .admin       - Management panel
-
-📖 USAGE:
-• Type: .help <command>
-• Example: .help antidelete
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-${channelRequired}
-
-💬 QUICK SUPPORT
-├─ Owner: +254727411435
-├─ Channel: https://whatsapp.com/channel/0029Vb8CRCa3GJP6wd0XtW0t
-└─ Email: otienocharlton460@gmail.com
-
-🔗 IMPORTANT LINKS:
-├─ GitHub: github.com/roy107roy12-netizen
-├─ Version: 1.0.0
-└─ Status: ✅ ACTIVE
-  `;
-
-  return m.reply(helpText);
-};
+);
