@@ -1,103 +1,47 @@
 {
-  "name": "CHARLTON-MD",
-  "description": "This is a simple WhatsApp bot built with Node.js to make WhatsApp automation easy and fun.",
-  "keywords": [
-    "bot",
-    "whatsapp",
-    "md",
-    "baileys",
-    "whatsapp-bot",
-    "automation",
-    "session",
-    "pairing"
-  ],
-  "website": "https://bot-deployer--otienojunior806.replit.app",
+  "name": "Charlton-XMD",
+  "description": "A simple WhatsApp bot using Baileys",
   "repository": "https://github.com/roy107roy12-netizen/Charlton-xmd",
-  "logo": "https://i.ibb.co/rK0G8VVm/005db45ad93c.jpg",
-  "success_url": "/",
-
-  "env": {
-    "OWNER_NUMBER": {
-      "description": "Bot owner phone number without + or spaces. Example: 254712345678",
-      "required": false
-    },
-
-    "SESSION_ID": {
-      "description": "Your WhatsApp session ID",
-      "required": true
-    },
-
-    "DATABASE_URL": {
-      "description": "Insert your database URL",
-      "required": false
-    },
-
-    "AUTOVIEW_STATUS": {
-      "description": "Auto view WhatsApp status (true/false)",
-      "value": "true",
-      "required": false
-    },
-
-    "AUTOLIKE_STATUS": {
-      "description": "Auto like WhatsApp status (true/false)",
-      "value": "true",
-      "required": false
-    },
-
-    "STATUS_LIKE_EMOJIS": {
-      "description": "Emojis for status reactions (comma-separated)",
-      "value": "💚,🔥",
-      "required": false
-    },
-
-    "PREFIX": {
-      "description": "Bot command prefix",
-      "value": ".",
-      "required": false
-    },
-
-    "BOT_EXPIRATION_DATE": {
-      "description": "Bot expiry date (dd/mm/yy)",
-      "value": "11/03/2027",
-      "required": false
-    },
-
-    "BOT_PIC": {
-      "description": "Bot profile picture URL",
-      "value": "https://i.ibb.co/rK0G8VVm/005db45ad93c.jpg",
-      "required": false
-    },
-
-    "BOT_NAME": {
-      "description": "Bot display name",
-      "value": "CHARLTON-MD",
-      "required": false
-    },
-
-    "AUTO_SOCIAL_DOWNLOAD": {
-      "description": "Auto download social media links",
-      "value": "false",
-      "required": false
-    },
-
-    "OWNER_NAME": {
-      "description": "Owner name",
-      "value": "Charlton",
-      "required": false
-    },
-
-    "MODE": {
-      "description": "Bot mode (public/private)",
-      "value": "public",
-      "required": false
-    }
-  },
-
+  "keywords": ["whatsapp", "bot", "baileys", "charlton"],
   "buildpacks": [
     {
       "url": "heroku/nodejs"
     }
   ],
-
-  "stack": "heroku-26"
+  "env": {
+    "SESSION": {
+      "description": "Your WhatsApp session string",
+      "required": true
+    },
+    "OWNER_NUMBER": {
+      "description": "Your WhatsApp number (with country code)",
+      "required": true
+    },
+    "PREFIX": {
+      "description": "Bot command prefix",
+      "value": ".",
+      "required": false
+    },
+    "BOTNAME": {
+      "description": "Bot name",
+      "value": "CHARLTON-XMD",
+      "required": false
+    },
+    "BOT_MODE": {
+      "description": "Bot mode (public/private)",
+      "value": "public",
+      "required": false
+    },
+    "BOT_TIMEZONE": {
+      "description": "Bot timezone",
+      "value": "Africa/Nairobi",
+      "required": false
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "free"
+    }
+  }
 }
