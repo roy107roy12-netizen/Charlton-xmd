@@ -1,80 +1,54 @@
-<h1 align="center">CHARLTON-XMD</h1>
+# Charlton-MD WhatsApp Bot
 
-<p align="center">
-A simple WhatsApp bot base built with Node.js for automation, pairing session, and easy deployment.
-</p>
+A powerful WhatsApp bot built with Node.js using Baileys library with command handler and database support.
 
-<p align="center">
-  <img src="https://i.ibb.co/4gg9Cws9/221797daf41c.jpg" width="500"/>
-</p>
+## Features
 
----
+- 🤖 Command handler system
+- 💾 SQLite/PostgreSQL database support
+- ⚙️ Configuration management
+- 🎯 Event-driven architecture
+- 🔧 Extensible plugin system
 
-## 🚀 FEATURES
-- WhatsApp bot automation  
-- Session pairing system  
-- Easy fork & deploy setup  
-- Lightweight and fast  
+## Installation
 
----
+```bash
+npm install
+```
 
-## 📌 REPOSITORY
+## Configuration
 
-<p align="center">
-<a href="https://github.com/roy107roy12-netizen/Charlton-xmd">
-  <img src="https://img.shields.io/badge/REPO-CHARLTON--XMD-blue?style=for-the-badge"/>
-</a>
-</p>
+1. Copy or create `set.env` file:
+```env
+SESSION=Charlton-md
+OWNER_NUMBER=254712345678
+OWNER_NAME=Charlton
+PREFIX=.
+BOT_MODE=public
+BOTNAME=CHARLTON-MD
+```
 
----
+## Usage
 
-## 🔗 SESSION PAIRING
+```bash
+npm start
+```
 
-<p align="center">
-<a href="https://bot-deployer--otienojunior806.replit.app">
-  <img src="https://img.shields.io/badge/PAIR-SESSION%20CODE-green?style=for-the-badge"/>
-</a>
-</p>
+## Project Structure
 
----
+```
+Charlton-xmd/
+├── commands/          # Bot commands
+├── database/          # Database models
+├── lib/              # Utility libraries
+├── session/          # WhatsApp sessions
+├── commandHandler.js # Command handler
+├── settings.js       # Configuration
+├── set.env          # Environment variables
+├── index.js         # Main entry point
+└── package.json
+```
 
-## 🍴 FORK THIS REPO
+## License
 
-<p align="center">
-<a href="https://github.com/roy107roy12-netizen/Charlton-xmd/fork">
-  <img src="https://img.shields.io/badge/FORK-THIS%20REPO-purple?style=for-the-badge"/>
-</a>
-</p>
-
----
-
-## 📦 DOWNLOAD SOURCE
-
-<p align="center">
-<a href="https://github.com/roy107roy12-netizen/Charlton-xmd/archive/refs/heads/main.zip">
-  <img src="https://img.shields.io/badge/DOWNLOAD-ZIP-blue?style=for-the-badge"/>
-</a>
-</p>
-
----
-
-## 🚀 DEPLOY
-
-<p align="center">
-<a href="https://heroku.com/deploy?template=https://github.com/roy107roy12-netizen/Charlton-xmd">
-  <img src="https://www.herokucdn.com/deploy/button.svg"/>
-</a>
-</p>
-
----
-
-## ⚠️ IMPORTANT
-- Do not share your session ID publicly  
-- Keep your environment variables safe  
-- Ensure all required configs are set before deploying  
-
----
-
-<p align="center">
-<i>Built for WhatsApp automation and easy deployment.</i>
-</p>
+ISC
