@@ -7,7 +7,7 @@
 
 <div style="text-align: center;">
   <a href="https://github.com/roy107roy12-netizen/Charlton-xmd">
-    <img src="https://i.ibb.co/PsZnb9NH/0d81ac6b1fb1.jpg" alt="Charlton Bot" border="0" width="300"/></a>
+    <img src="https://i.ibb.co/pvTCfNqV/0333084a6a55.jpg" alt="Charlton Bot" border="0" width="300"/></a>
   </a>
   <hr style="margin-top: 20px; margin-bottom: 20px;"/>
 </div>
@@ -138,6 +138,7 @@ npm start
 | `BOTNAME` | Bot display name | ❌ No | `CHARLTON-XMD` |
 | `BOT_MODE` | public or private | ❌ No | `public` |
 | `BOT_TIMEZONE` | Your timezone | ❌ No | `Africa/Nairobi` |
+| `BOT_PIC` | Bot picture URL | ❌ No | `https://i.ibb.co/pvTCfNqV/0333084a6a55.jpg` |
 
 ---
 
