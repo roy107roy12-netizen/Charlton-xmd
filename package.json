@@ -1,16 +1,38 @@
 {
   "name": "charlton-md",
-  "version": "1.0.0",
-  "description": "Simple WhatsApp MD Bot",
+  "version": "2.0.0",
+  "description": "WhatsApp MD Bot with Command Handler",
   "main": "index.js",
+  "type": "commonjs",
   "scripts": {
-    "start": "node index.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "s": "node index.js",
+    "charlton": "pm2 start index.js --attach --max-memory-restart 490M"
   },
+  "keywords": [
+    "bot",
+    "Baileys",
+    "charlton-md",
+    "whatsapp",
+    "whatsapp-bot"
+  ],
+  "author": "roy107roy12",
+  "license": "ISC",
   "dependencies": {
     "@whiskeysockets/baileys": "^6.7.7",
-    "dotenv": "^16.4.5",
+    "axios": "^1.2.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.19.2",
+    "ffmpeg-static": "latest",
+    "fluent-ffmpeg": "latest",
+    "fs-extra": "^11.1.0",
+    "jimp": "^0.16.3",
     "pino": "^9.3.2",
+    "pm2": "latest",
     "qrcode": "^1.5.3",
-    "qrcode-terminal": "^0.12.0"
+    "qrcode-terminal": "^0.12.0",
+    "sequelize": "latest",
+    "sqlite3": "^5.1.7"
   }
 }
